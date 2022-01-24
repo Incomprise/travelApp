@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 class CardCity extends StatelessWidget {
   final String name;
   final String image;
+  final bool checked;
+  final Function updatedChecked;
 
-  CardCity({ required this.name, required this.image });
+  CardCity({ required this.name, required this.image, required this.checked, required this.updatedChecked });
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +23,8 @@ class CardCity extends StatelessWidget {
                  image: AssetImage(image),
                  child: InkWell(
                   onTap: () {
-                   print ('prout');
-                 },
+                    updatedChecked();
+                  },
                ),),
               Padding(
                 padding: EdgeInsets.all(10),
@@ -33,8 +35,10 @@ class CardCity extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Icon(Icons.star_border,
-                              size: 45, color: Colors.amber),
+                          Icon(
+                          checked ? Icons.star : Icons.star_border,
+                              size: 45, color: Colors.white
+                          ),
                         ],
                       ),
                     ),
