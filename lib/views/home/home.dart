@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:travel_app/city.dart';
+import 'package:travel_app/views/home/widgets/city.dart';
 
 class Home extends StatefulWidget {
   @override
